@@ -52,11 +52,11 @@ This should be done before the client is ready.
 
 ##### `AttachSpeechEventOptions`
 
-| Name                  | Type                                 | Description                                                           |
-|-----------------------|--------------------------------------|-----------------------------------------------------------------------|
-| `key`                 | `string`                             | The Google Cloud Platform API key.                                    |
-| `client`              | `Discord.Client`                     | The discord.js client.                                                |
-| `shouldProcessUserId` | `(discordUserId: string) => boolean` | A function that returns true if the user's voice should be processed. |
+| Name                  | Type                                          | Description                                                                |
+|-----------------------|-----------------------------------------------|----------------------------------------------------------------------------|
+| `key`                 | `string`                                      | The Google Cloud Platform API key.                                         |
+| `client`              | `Discord.Client`                              | The discord.js client.                                                     |
+| `shouldProcessUserId` | `(discordUserId: string) => Promise<boolean>` | A promise that should return true if the user's voice should be processed. |
 
 #### Returns
 

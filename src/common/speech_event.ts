@@ -55,9 +55,11 @@ const activeClients = new Map<ClientId, Set<GuildId>>();
 
 /**
  * Performs the primary function of this library.
- * Attaches a voice listener to the client.
- * When the voice listener detects a voice message, it will be processed and emitted.
- * Listeners can be attached 
+ * Attaches listeners to the client to detect voice activity and emit voice messages.
+ *
+ * This function should only be called once per discord client.
+ * The library attempts to prevent multiple listeners from being attached to the same client.
+ * However, that should not be relied upon.
  */
 export function attachSpeechEvent({
     key,
